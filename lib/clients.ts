@@ -1,0 +1,26 @@
+// Client logos (from the company profile). Files live in public/images/clients/
+// Client logos. Files live in public/images/clients/
+export const clients = [
+  { name: "Safaricom", logo: "/images/safaricom.png" },
+  { name: "Toyota Kenya", logo: "/images/toyota-kenya.png" },
+  { name: "Standard Chartered", logo: "/images/standard.png" },
+  { name: "Absa", logo: "/images/absa.png" },
+  { name: "UNHCR", logo: "/images/unhcr.png" },
+  { name: "Kenya Ports Authority", logo: "/images/kenyaportsauthority.png" },
+  { name: "GSK", logo: "/images/gsk.png" },
+  { name: "BAT", logo: "/images/BAT.png" },
+  { name: "Tetra Pak", logo: "/images/tetra.png" },
+  { name: "Old Mutual", logo: "/images/old-mutual.png" },
+  { name: "Swissport", logo: "/images/swissport.png" },
+  { name: "Kuehne+Nagel", logo: "/images/nagel.png" },
+  { name: "CFAO", logo: "/images/cfao.png" },
+  { name: "Serena Hotels", logo: "/images/serenahotel.png" },
+  { name: "Crowne Plaza", logo: "/images/crowne.png" },
+  { name: "Unga Group", logo: "/images/unga.png" },
+  { name: "Williamson Tea", logo: "/images/williamsontea.png" },
+  { name: "KTDA", logo: "/images/ktda.png" },
+  { name: "New KCC", logo: "/images/kcc.png" },
+  { name: "Strathmore University", logo: "/images/strathmoreuniversity.png" },
+  { name: "Royal Converters", logo: "/images/royal.png" },
+  { name: "Afrimac", logo: "/images/afrimac.png" },
+];
