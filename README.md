@@ -1,48 +1,69 @@
-# OFGEN Africa — one-page website (Next.js + React)
+# OFGEN Africa — Website
 
-## Run it
+Official one-page website for **OFGEN Africa**, a pan-African energy infrastructure developer delivering solar, battery storage, grid and telecom energy projects across Sub-Saharan Africa.
+
+Built with **Next.js 15**, **React 19** and **TypeScript**. Available in **English and French**.
+
+## Features
+
+- One-page layout with smooth-scrolling navigation
+- English / French language switch
+- Fully responsive (desktop, tablet, mobile)
+- Sections: Hero, About, Expertise, Projects, Sectors & Regions, Clients, Impact, Testimonials, Contact
+- Optimised images with `next/image`
+- Contact form that opens the visitor’s email app pre-filled
+
+## Getting started
+
+Requires **Node.js 18.18+** (Node 20+ recommended).
+
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build && npm start   # production
+npm run dev
 ```
-Requires Node 18.18+ (Node 20+ recommended). Deploys as-is to Vercel, Netlify or Cloudflare.
 
-## Photos
-The photos in `public/images/` were cut from the design mock-up (`design/mockup.png`, see `scripts/extract-photos.py`).
-They match the design but are low resolution, so swap in high-resolution originals when you have them —
-use the **same filename** and they appear automatically (any size works; they are cropped to fit).
+Open http://localhost:3000.
 
-| File | Where it shows | Suggested size |
-|---|---|---|
-| hero.jpg | Top banner | 2400×1200 |
-| who-we-are.jpg | Who we are | 1200×930 |
-| solutions-bg.jpg | Our Solutions background | 2400×1000 |
-| solution-solar / storage / grid / telecom.jpg | Solution cards | 800×1000 |
-| project-solar / storage / grid / telecom.jpg | Featured project cards | 900×460 |
-| impact-bg.jpg | Our Impact band | 2400×500 |
-| contact-bg.jpg | "Let's Build a Sustainable Future" panel | 1200×800 |
-| africa-map.png | Footprint map (transparent PNG) | 600×650 |
+### Production build
 
-## Sizing
-All sizes are in `rem`, taken 1:1 from the 1440px design. On desktop the base font size follows the
-screen width (`html { font-size: 1.1111vw }` in `app/globals.css`), so the page fills any monitor
-exactly like the design. Below 1024px the layout switches to tablet/phone versions.
+```bash
+npm run build
+npm start
+```
 
-## Edit text and details
-- `lib/content.ts` — all page text, English and French.
-- `lib/site.ts` — email, phone, address, social links, impact numbers.
-- `app/globals.css` — colours (top of file) and all styling.
-- Fonts: Source Serif 4 (headings) and Inter (text), loaded in `app/layout.tsx`.
+## Project structure
 
-## Placeholders to check before going live
-- Phone number in `lib/site.ts` (copied from the design mock-up).
-- Social links in `lib/site.ts` (currently `#`).
-- Impact figures (blank, matching the design) in `lib/site.ts`.
-- The testimonial quote in `lib/content.ts` — replace with a real, approved quote.
+```
+app/
+  layout.tsx        Fonts, page metadata, <html> wrapper
+  page.tsx          Order of the sections on the page
+  globals.css       All styles (colours at the top)
+components/         One file per section (Hero, About, Projects, …)
+lib/
+  content.ts        All page text, English + French
+  site.ts           Contact details, social links, impact figures
+  clients.ts        Client logo list
+public/images/      Photos, logos, map
+```
 
-## Contact form
-"Send Message" opens the visitor's email app pre-filled to talk2us@ofgen.africa. To send from the website itself, connect a form service (e.g. Formspree) or an API route in `components/Contact.tsx`.
+## Editing content
 
-## Structure
-`app/page.tsx` stacks the sections; each section lives in `components/` and has an id (`#home`, `#about`, `#expertise`, `#solutions`, `#sectors`, `#projects`, `#impact`, `#testimonials`, `#contact`) used by the menu.
+| What | Where |
+|---|---|
+| Any text on the page (EN + FR) | `lib/content.ts` |
+| Email, phone, address, social links | `lib/site.ts` |
+| Impact numbers (MWp, MWh, projects, years) | `lib/site.ts` |
+| Client logos | `lib/clients.ts` + `public/images/clients/` |
+| Project card photos | `components/ProjectsSection.tsx` (top of file) |
+| Colours and fonts | `app/globals.css` (top of file) |
+
+To replace a photo, put the new file in `public/images/` with the **same filename**.
+
+## Deployment
+
+Deployed on **Vercel**. Every push to the `main` branch redeploys the site automatically.
+
+## Contact
+
+OFGEN Africa — No 7 Diani Close, Kilimani, Nairobi, Kenya
+talk2us@ofgen.africa · www.ofgen.africa
